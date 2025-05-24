@@ -8,48 +8,113 @@
 
 /* Form Handling Styles */
 .job-list {
-  padding: 0 30px 0; 
+  padding: 0 30px 0;
 }
+
 /* Style product input filter */
 .form-header form {
   display: flex;
-  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin: 20px auto; 
+  max-width: 900px;
 }
+
 .job-input {
   width: 50%;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 10px;
-  padding-left: 5px;
-  display: block;
-  transition: all .5s ease;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .job-input:focus {
-  width: 55%;
+  outline: none; /* Remove default outline */
+  border-color: #007bff; /* Highlight border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle shadow */
 }
 
 @media (max-width: 991.98px) {
-  .job-input { width: 80%; }
-  .job-input:focus { width: 90%; }
+  .job-input {
+    width: 80%;
+  }
 }
 
 @media (max-width: 767.98px) {
-  .job-input { width: 80%; }
-  .job-input:focus { width: 90%; } 
   .form-header form {
     flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    align-items: stretch;
+    padding: 15px;
   }
+
   .job-input {
-    margin-bottom: inherit;
+    width: 100%;
   }
+
+  .job-input:focus {
+    width: 100%;
+  }
+}
+
+.form-details {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background-color: #e2e6ea;
+  color: #343a40;
+  border: 1px solid #dae0e5;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap; /* Prevent text from wrapping within the button */
+}
+
+.tag:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.job-status {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.sumbit-data {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.sumbit-data:hover {
+  background-color: #218838;
 }
 
 .error-message {
   margin-top: 2px;
-  align-items:center;
+  align-items: center;
   line-height: 0.8;
   text-align: left;
   font-size: small;
@@ -58,8 +123,11 @@
 }
 
 @media (min-width: 1199.98px) {.error-message {max-width: 1140px;}}
+
 @media (max-width: 991.98px) {.error-message {max-width: 960px;}}
+
 @media (max-width: 767.98px) {.error-message {max-width: 720px;}}
+
 @media (min-width: 575.98px) {.error-message {max-width: 60vw;}}
 
 /* App Styles */
@@ -78,9 +146,8 @@
 .columns {
   width: 33.33%;
   background-color: #f8d7da;
-  margin: 40px ;
+  margin: 40px;
 }
-
 
 /* Header Stying */
 
@@ -89,10 +156,10 @@
 }
 
 h1 {
-    display: flex;
-    color: #1a1a1a;    
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  color: #1a1a1a;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 a {
@@ -100,9 +167,23 @@ h1 a {
   text-decoration: none;
 }
 
-
 /* Footer Styling */
+footer h2 {
+  /* Default font-size for larger screens */
+  font-size: 2rem; /* Or whatever looks good on desktop/tablet */
+  text-align: center; /* Generally good for footers */
+  padding: 10px; /* Add some padding */
+}
 
-@media (max-width: 440.98px) {
-  footer h2 {font-size: calc(8vw * 0.9)}
+@media (max-width: 768px) {
+  footer h2 {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+  }
+}
+
+/* Optional: Even smaller for very small phones */
+@media (max-width: 480px) {
+  footer h2 {
+    font-size: clamp(1.2rem, 6vw, 1.8rem);
+  }
 }
