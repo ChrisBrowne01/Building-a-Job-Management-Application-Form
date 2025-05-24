@@ -7,7 +7,7 @@ export const Header = () => {
     <header className="header-top">
       <h1>
         <img className="object-fit-contain" height="100" weight="auto" src={Logo} alt="Job Board Application" />
-        <a href="/">Job Board</a>
+        <a href="/">Job Management Application Form</a>
       </h1>
       <JobForm />
     </header>
