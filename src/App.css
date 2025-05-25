@@ -87,6 +87,11 @@
   color: white;
 }
 
+.tag.selected-tag {
+  background-color: #007bff;
+  color: white;
+}
+
 .job-status {
   padding: 10px;
   border: 1px solid #ccc;
@@ -165,10 +170,9 @@ h1 a {
 
 /* Footer Styling */
 footer h2 {
-  /* Default font-size for larger screens */
-  font-size: 2rem; /* Or whatever looks good on desktop/tablet */
-  text-align: center; /* Generally good for footers */
-  padding: 10px; /* Add some padding */
+  font-size: 2rem; 
+  text-align: center;
+  padding: 10px;
 }
 
 @media (max-width: 768px) {
